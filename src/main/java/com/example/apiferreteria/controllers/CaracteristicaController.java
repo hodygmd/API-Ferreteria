@@ -1,8 +1,8 @@
-package com.example.ferreteriaa.controllers;
+package com.example.apiferreteria.controllers;
 
-import com.example.ferreteriaa.dto.CaracteristicaDto;
-import com.example.ferreteriaa.entities.Caracteristica;
-import com.example.ferreteriaa.services.CaracteristicaService;
+import com.example.apiferreteria.dto.CaracteristicaDto;
+import com.example.apiferreteria.entities.Caracteristica;
+import com.example.apiferreteria.services.CaracteristicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

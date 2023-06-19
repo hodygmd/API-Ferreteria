@@ -1,8 +1,8 @@
-package com.example.ferreteriaa.services;
+package com.example.apiferreteria.services;
 
-import com.example.ferreteriaa.dto.UnidadMedidaDto;
-import com.example.ferreteriaa.entities.UnidadMedida;
-import com.example.ferreteriaa.repositories.UnidadMedidaRepository;
+import com.example.apiferreteria.dto.UnidadMedidaDto;
+import com.example.apiferreteria.entities.UnidadMedida;
+import com.example.apiferreteria.repositories.UnidadMedidaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

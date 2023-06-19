@@ -1,6 +1,6 @@
-package com.example.ferreteriaa.entities;
+package com.example.apiferreteria.entities;
 
-import com.example.ferreteriaa.embeddable.ProductoCaracteristicaPk;
+import com.example.apiferreteria.embeddable.ProductoCaracteristicaPk;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

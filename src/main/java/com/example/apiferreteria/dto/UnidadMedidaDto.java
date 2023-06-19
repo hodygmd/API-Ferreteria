@@ -1,4 +1,4 @@
-package com.example.ferreteriaa.dto;
+package com.example.apiferreteria.dto;
 
 import lombok.Data;
 

@@ -1,6 +1,5 @@
-package com.example.ferreteriaa.dto;
+package com.example.apiferreteria.dto;
 
-import com.example.ferreteriaa.entities.UnidadMedida;
 import lombok.Data;
 
 @Data

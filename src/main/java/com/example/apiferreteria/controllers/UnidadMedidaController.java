@@ -1,8 +1,8 @@
-package com.example.ferreteriaa.controllers;
+package com.example.apiferreteria.controllers;
 
-import com.example.ferreteriaa.dto.UnidadMedidaDto;
-import com.example.ferreteriaa.entities.UnidadMedida;
-import com.example.ferreteriaa.services.UnidadMedidaService;
+import com.example.apiferreteria.dto.UnidadMedidaDto;
+import com.example.apiferreteria.entities.UnidadMedida;
+import com.example.apiferreteria.services.UnidadMedidaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

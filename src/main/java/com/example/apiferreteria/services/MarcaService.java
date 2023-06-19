@@ -1,8 +1,8 @@
-package com.example.ferreteriaa.services;
+package com.example.apiferreteria.services;
 
-import com.example.ferreteriaa.dto.MarcaDto;
-import com.example.ferreteriaa.entities.Marca;
-import com.example.ferreteriaa.repositories.MarcaRepository;
+import com.example.apiferreteria.dto.MarcaDto;
+import com.example.apiferreteria.entities.Marca;
+import com.example.apiferreteria.repositories.MarcaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

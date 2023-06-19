@@ -1,4 +1,4 @@
-package com.example.ferreteriaa.entities;
+package com.example.apiferreteria.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

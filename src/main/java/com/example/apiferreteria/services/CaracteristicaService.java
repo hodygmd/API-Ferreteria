@@ -1,9 +1,9 @@
-package com.example.ferreteriaa.services;
+package com.example.apiferreteria.services;
 
-import com.example.ferreteriaa.dto.CaracteristicaDto;
-import com.example.ferreteriaa.entities.Caracteristica;
-import com.example.ferreteriaa.repositories.CaracteristicaRepository;
-import com.example.ferreteriaa.repositories.UnidadMedidaRepository;
+import com.example.apiferreteria.dto.CaracteristicaDto;
+import com.example.apiferreteria.entities.Caracteristica;
+import com.example.apiferreteria.repositories.CaracteristicaRepository;
+import com.example.apiferreteria.repositories.UnidadMedidaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -50,7 +50,7 @@ public class CaracteristicaService {
     private Caracteristica getCategoria(CaracteristicaDto caracteristicaDto,Caracteristica caracteristica) {
         caracteristica.setDescripcion(caracteristicaDto.getDescripcion());
         caracteristica.setId_unidad_medida(unidadMedidaRepository.findById(caracteristicaDto.getId_unidad_medida()).get());
-        caracteristica.setStatus(caracteristicaDto.getStatus());
+        caracteristica.setMedida(caracteristicaDto.getMedida());
         caracteristica.setStatus(caracteristicaDto.getStatus());
         return repository.save(caracteristica);
     }

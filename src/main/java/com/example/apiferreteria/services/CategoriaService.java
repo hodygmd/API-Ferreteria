@@ -1,8 +1,8 @@
-package com.example.ferreteriaa.services;
+package com.example.apiferreteria.services;
 
-import com.example.ferreteriaa.dto.CategoriaDto;
-import com.example.ferreteriaa.entities.Categoria;
-import com.example.ferreteriaa.repositories.CategoriaRepository;
+import com.example.apiferreteria.dto.CategoriaDto;
+import com.example.apiferreteria.entities.Categoria;
+import com.example.apiferreteria.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -18,12 +18,12 @@ public class CategoriaService {
         return repository.findAllByStatus();
     }
     public Categoria create(CategoriaDto categoriaDto){
-        /*String[] result= repository.findNombresByStatus().toArray(new String[0]);
+        String[] result= repository.findNombresByStatus().toArray(new String[0]);
         for(int i=0;i<result.length;i++){
             if (categoriaDto.getDescripcion().equals(result[i])) {
                 throw new ResponseStatusException(HttpStatus.FOUND,String.format("Categoria %s already exists",result[i]));
             }
-        }*/
+        }
         Categoria categoria=new Categoria();
         return getCategoria(categoriaDto,categoria);
     }
