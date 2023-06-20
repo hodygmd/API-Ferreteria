@@ -19,4 +19,9 @@ public class ProductoCaracteristica {
     @ManyToOne
     @JoinColumn(name = "id_caracteristica")
     private Caracteristica id_caracteristica;
+    @ManyToOne
+    @JoinColumn(name = "id_unidad_medida")
+    private UnidadMedida id_unidad_medida;
+    @Column(name = "medida")
+    private Float medida;
 }

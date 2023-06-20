@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface ProductoCaracteristicaRepository extends JpaRepository<ProductoCaracteristica, ProductoCaracteristicaPk> {
     @Query("select pc from ProductoCaracteristica pc where pc.clave_producto.clave=?1")
-    public List<ProductoCaracteristica> findByClave_producto(String clave);
+    public ProductoCaracteristica[] findByClave_producto(String clave);
 }

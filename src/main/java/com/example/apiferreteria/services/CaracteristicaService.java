@@ -49,8 +49,7 @@ public class CaracteristicaService {
     }
     private Caracteristica getCategoria(CaracteristicaDto caracteristicaDto,Caracteristica caracteristica) {
         caracteristica.setDescripcion(caracteristicaDto.getDescripcion());
-        caracteristica.setId_unidad_medida(unidadMedidaRepository.findById(caracteristicaDto.getId_unidad_medida()).get());
-        caracteristica.setMedida(caracteristicaDto.getMedida());
+
         caracteristica.setStatus(caracteristicaDto.getStatus());
         return repository.save(caracteristica);
     }

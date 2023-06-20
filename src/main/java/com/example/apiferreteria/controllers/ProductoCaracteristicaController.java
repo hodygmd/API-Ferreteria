@@ -22,14 +22,14 @@ public class ProductoCaracteristicaController {
         return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
     }
     @PostMapping("/create")
-    public ResponseEntity<List<ProductoCaracteristica>> create(@RequestBody ProductoCaracteristicaDto[] dto){
+    public ResponseEntity<ProductoCaracteristica[]> create(@RequestBody ProductoCaracteristicaDto[] dto){
         return new ResponseEntity<>(service.create(dto),HttpStatus.CREATED);
     }
     @GetMapping("/{clave}")
-    public ResponseEntity<List<ProductoCaracteristica>> getAllByClave(@PathVariable("clave")String clave){
+    public ResponseEntity<ProductoCaracteristica[]> getAllByClave(@PathVariable("clave")String clave){
         return new ResponseEntity<>(service.getAllByClave(clave),HttpStatus.OK);
     }
-    @DeleteMapping("/delete")
+    @PostMapping("/delete")
     public void delete(@RequestBody ProductoCaracteristicaDto dto){
         service.delete(dto);
     }
