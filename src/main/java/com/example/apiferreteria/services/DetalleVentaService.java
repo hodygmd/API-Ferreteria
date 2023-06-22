@@ -2,6 +2,7 @@ package com.example.apiferreteria.services;
 
 import com.example.apiferreteria.dto.DetalleVentaDto;
 import com.example.apiferreteria.entities.DetalleVenta;
+import com.example.apiferreteria.entities.Producto;
 import com.example.apiferreteria.entities.Venta;
 import com.example.apiferreteria.repositories.DetalleVentaRepository;
 import com.example.apiferreteria.repositories.ProductoRepository;
@@ -24,6 +25,7 @@ public class DetalleVentaService {
     @Autowired
     private ProductoRepository productoRepository;
     private Float t;
+    private Integer e;
 
     public DetalleVenta[] create(DetalleVentaDto[] detalleVentaDtos) {
         return getDv(detalleVentaDtos);
@@ -39,6 +41,10 @@ public class DetalleVentaService {
         t = venta.getTotal();
         t -= (detalleVenta.getPrecio() * detalleVenta.getCantidad());
         venta.setTotal(t);
+        Producto producto=productoRepository.getReferenceById(repository.findById(id).get().getClave_producto().getClave());
+        e=producto.getExistencias()+detalleVenta.getCantidad();
+        producto.setExistencias(e);
+        productoRepository.save(producto);
         ventaRepository.save(venta);
         repository.deleteById(id);
     }
@@ -62,6 +68,10 @@ public class DetalleVentaService {
             t += (detalleVenta.getCantidad() * detalleVenta.getPrecio());
             venta.setTotal(t);
             ventaRepository.save(venta);
+            Producto producto=productoRepository.getReferenceById(dto[i].getClave_producto());
+            e=producto.getExistencias()-dto[i].getCantidad();
+            producto.setExistencias(e);
+            productoRepository.save(producto);
 
         }
         return repository.findByFolio_v(dto[0].getFolio_v());
