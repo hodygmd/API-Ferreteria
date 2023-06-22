@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class VentaService {
@@ -15,9 +16,17 @@ public class VentaService {
     private VentaRepository repository;
     @Autowired
     private EmpleadoRepository empleadoRepository;
+    public List<Venta> getAllByStatus(){
+        return repository.findAllByStatus();
+    }
     public Venta create(VentaDto ventaDto){
         Venta venta=new Venta();
         return getVenta(ventaDto,venta);
+    }
+    public Venta delete(String folio){
+        Venta venta=repository.getReferenceById(folio);
+        venta.setStatus((byte)0);
+        return repository.save(venta);
     }
     private Venta getVenta(VentaDto ventaDto,Venta venta){
         venta.setFolio(ventaDto.getFolio());

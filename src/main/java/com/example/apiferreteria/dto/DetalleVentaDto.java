@@ -7,5 +7,5 @@ public class DetalleVentaDto {
     private String folio_v;
     private String clave_producto;
     private Integer cantidad;
-    private Float precio;
+    /*private Float precio;*/
 }

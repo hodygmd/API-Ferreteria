@@ -1,9 +1,9 @@
 package com.example.apiferreteria.entities;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 @Getter
 @Setter
 @Entity
@@ -13,11 +13,11 @@ public class DetalleVenta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "folio_v")
     private Venta folio_v;
-    @ManyToOne
-    @JoinColumn(name = "clave_producto")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "clave_producto",unique = true)
     private Producto clave_producto;
     @Column(name = "cantidad")
     private Integer cantidad;
