@@ -17,6 +17,10 @@ public class Empleado {
     private String clave;
     @Column(name = "nombre")
     private String nombre;
+    @Column(name = "username")
+    private String username;
+    @Column(name = "password")
+    private String password;
     @Column(name = "status")
     private Byte status;
 }
